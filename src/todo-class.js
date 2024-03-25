@@ -1,9 +1,10 @@
 export class toDo {
-    constructor(title, description, dueDate, priority) {
+    constructor(title, description, dueDate, priority, project) {
         this._title = title;
         this._description = description;
-        this._dueDate = dueDate
-        this._priority = priority
+        this._dueDate = dueDate;
+        this._priority = priority;
+        this._project = project;
     }
     get title(){
         return this._title;
@@ -16,6 +17,9 @@ export class toDo {
     }
     get priority(){
         return this._priority;
+    }
+    get project(){
+        return this._project;
     }
 }
 

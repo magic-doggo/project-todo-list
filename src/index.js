@@ -22,10 +22,12 @@ function createToDo() {
     let title = document.getElementById("title").value;
     let description = document.getElementById("description").value;
     let dueDate = document.getElementById("due-date").value;
-    let priority= document.getElementById("priority").value;
-    let newToDo = new toDo (title, description, dueDate, priority) 
-    toDoList.push(newToDo)  
-    console.log(toDoList)
+    let priority = document.getElementById("priority").value;
+    let project = document.getElementById("project").value;
+    let newToDo = new toDo (title, description, dueDate, priority, project);
+    toDoList.push(newToDo);
+    console.log(toDoList);
+    return newToDo;    
 }
 
 // function createToDo(){
