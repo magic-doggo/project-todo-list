@@ -10,11 +10,11 @@
         <button id="new-todo">New ToDo</button>
         <dialog id="dialog">
             <p>Greetings, one and allasdaasdasdasdsdsssss!Greetings, one and allasdaasdasdasdsdsssss!Greetings, one and allasdaasdasdasdsdsssss!Greetings, one and allasdaasdasdasdsdsssss!Greetings, one and allasdaasdasdasdsdsssss!</p>
-            <form method="dialog">
+            <form id="form" method="dialog">
                 <ul>
                     <li class="title">
                         <label for="title">title</label>
-                        <input type="text" id="title" name="title" placeholder="Task name" required>
+                        <input type="text" id="title" name="title" placeholder="Task name" pattern=".{1,}" required>
                     </li>
                     <li>
                         <label for="description">description</label>
@@ -40,8 +40,8 @@
                         </select>
                     </li>
                 </ul>
-                <button id="confirm-Btn" value="default">Confirm</button>
-                <button id="cancel-Btn" value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirm-Btn" type="submit" value="default">Confirm</button>
+                <button id="cancel-Btn" type="reset" value="cancel" formmethod="dialog">Cancel</button>
             </form>
           </dialog>
         <div id="all-tasks">All Tasks</div>
