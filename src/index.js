@@ -44,7 +44,6 @@ function setRequiredToFalse(){
     document.getElementById("title").required = false;
 }
 
-
 // later can create other smaller arrays depending on project
 // how will i select which project it belongs to? do I Need another parameter in toDo? dropdown to select the project? create a general project, or allow todos not to have proj?
 
