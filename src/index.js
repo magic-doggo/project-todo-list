@@ -1,14 +1,15 @@
 import { toDo } from "./todo-class"
-import { AddToObject } from "./addToList"
-
+import { AddToObject } from "./addToDoToObject"
+import { showAllTasks } from "./all-tasks"
 console.log("12345")
-let objectOfToDoObjects = {}
+export let objectOfToDoObjects = {}
 // let toDoList = []
 const newToDo = document.getElementById("new-todo")
 const dialog = document.getElementById("dialog")
 const cancelButton = document.getElementById("cancel-Btn")
 const confirmButton = document.getElementById("confirm-Btn")
 const form = document.getElementById("form")
+const allTasks = document.getElementById("all-tasks")
 
 newToDo.addEventListener("click", () => {
     dialog.showModal();
@@ -31,7 +32,8 @@ function createToDo() {
         AddToObject(newToDo, objectOfToDoObjects);
         console.log(objectOfToDoObjects);
         document.querySelector("form").reset();
-        dialog.close()
+        // showAllTasks();
+        dialog.close();
         setRequiredToFalse() //if form is valid, setting required to false allows me to close the dialog window even though it is empty after clearing the form
         // AddToList(newToDo)
     }
@@ -49,4 +51,8 @@ function setRequiredToFalse(){
 newToDo.addEventListener("click", () => {
     dialog.showModal();
     document.getElementById("title").required = true;
+})
+
+allTasks.addEventListener("click", () => {
+    showAllTasks();
 })
