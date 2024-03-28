@@ -2,10 +2,11 @@ import { toDo } from "./todo-class"
 import { AddToObject } from "./addToDoToObject"
 import { showAllTasks } from "./all-tasks"
 import { project } from "./project-class"
+import { displayNewProject } from "./display-projects"
 
 console.log("12345")
 export let objectOfToDoObjects = {};
-let projectList = [];
+export let projectList = [];
 // let toDoList = []
 const newToDo = document.getElementById("new-todo");
 const dialog = document.getElementById("dialog");
@@ -15,7 +16,6 @@ const form = document.getElementById("form");
 const allTasks = document.getElementById("all-tasks");
 const createNewProjectButton = document.getElementById("create-new-project");
 let projectForm = document.getElementById("project-form");
-// let projectName;
 
 newToDo.addEventListener("click", () => {
     dialog.showModal();
@@ -67,10 +67,10 @@ function createNewProject(event){
     let projectName = document.getElementById("new-project").value;
     if (projectForm.checkValidity() === true){
         event.preventDefault();
-        let newProject = new project(projectName)
-        projectList.push(newProject)
-        console.log(projectList)
-        console.log("qwepoqpweos")
+        let newProject = new project(projectName);
+        projectList.push(newProject);
+        console.log(projectList);
         document.getElementById("project-form").reset();
+        displayNewProject(projectList);
     }
 }
