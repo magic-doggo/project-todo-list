@@ -1,10 +1,17 @@
 import { projectList } from ".";
+import { project } from "./project-class";
 
 export let displayNewProject = function(newProject){
     let i = 0;
     const projectContainer = document.getElementById("projects");
     while (projectContainer.firstChild) {
         projectContainer.removeChild(projectContainer.firstChild);
+    }
+    const projectOptions = document.getElementById("project");
+    while (projectOptions.childNodes.length > 1){
+        console.log(projectOptions.lastChild.value)
+        console.log(projectOptions.childNodes.length)
+        projectOptions.removeChild(projectOptions.lastChild)
     }
 
     let task = document.createElement("div");
@@ -16,6 +23,12 @@ export let displayNewProject = function(newProject){
         projectContainer.appendChild(newProjectType);
         newProjectType.classList.add("project");
         newProjectType.innerHTML = newProject[i].projectName;
+
+        let newProjectOption = document.createElement("option");
+        projectOptions.appendChild(newProjectOption);
+        newProjectOption.innerHTML = newProject[i].projectName;
+        
+
         i++;
     }
 }

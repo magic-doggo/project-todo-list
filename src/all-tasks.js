@@ -4,7 +4,7 @@ const main = document.getElementById("main");
 
 export const showAllTasks = function() {
     let i = 0;
-    let currentProject = "undefined" //will be useful once I implement other projects
+    let currentProject = "unclassified" //will be useful once I implement other projects
     const element = document.getElementById("tasks-container");
     while (element.firstChild) {
         element.removeChild(element.firstChild);
