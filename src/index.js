@@ -1,15 +1,21 @@
 import { toDo } from "./todo-class"
 import { AddToObject } from "./addToDoToObject"
 import { showAllTasks } from "./all-tasks"
+import { project } from "./project-class"
+
 console.log("12345")
-export let objectOfToDoObjects = {}
+export let objectOfToDoObjects = {};
+let projectList = [];
 // let toDoList = []
-const newToDo = document.getElementById("new-todo")
-const dialog = document.getElementById("dialog")
-const cancelButton = document.getElementById("cancel-Btn")
-const confirmButton = document.getElementById("confirm-Btn")
-const form = document.getElementById("form")
-const allTasks = document.getElementById("all-tasks")
+const newToDo = document.getElementById("new-todo");
+const dialog = document.getElementById("dialog");
+const cancelButton = document.getElementById("cancel-Btn");
+const confirmButton = document.getElementById("confirm-Btn");
+const form = document.getElementById("form");
+const allTasks = document.getElementById("all-tasks");
+const createNewProjectButton = document.getElementById("create-new-project");
+let projectForm = document.getElementById("project-form");
+// let projectName;
 
 newToDo.addEventListener("click", () => {
     dialog.showModal();
@@ -55,3 +61,16 @@ newToDo.addEventListener("click", () => {
 allTasks.addEventListener("click", () => {
     showAllTasks();
 })
+
+createNewProjectButton.addEventListener("click", createNewProject)
+function createNewProject(event){
+    let projectName = document.getElementById("new-project").value;
+    if (projectForm.checkValidity() === true){
+        event.preventDefault();
+        let newProject = new project(projectName)
+        projectList.push(newProject)
+        console.log(projectList)
+        console.log("qwepoqpweos")
+        document.getElementById("project-form").reset();
+    }
+}
