@@ -4,7 +4,7 @@ const main = document.getElementById("main");
 
 export const showAllTasks = function() {
     let i = 0;
-    let currentProject = "unclassified" //will be useful once I implement other projects
+    let currentProject = "unclassified" //will be useful once I implement other projects. or not here, this should show all tasks regardless of proj
     const element = document.getElementById("tasks-container");
     while (element.firstChild) {
         element.removeChild(element.firstChild);
@@ -31,11 +31,15 @@ export const showAllTasks = function() {
         task.appendChild(priority);
         priority.innerHTML = objectOfToDoObjects[i].priority;
 
+        let project = document.createElement("div");
+        task.appendChild(project);
+        project.innerHTML = objectOfToDoObjects[i].project;
+
 //CONTINUE ADDING THE REST OF THE ELEMENTS. THEN FIND A WAY TO MAKE IT SHOW WHEN YOU CLICK NEW-TODO. THINK WHETHER YOU ACTUALLY WANT ALL THIS
 //ON SAME PAGE OR NOT. DO I WANT DIFFERENT PAGE FOR ALL TASKS VS SEPARATE PROJECTS?
 
 //when confirm new todo, if container has any kids and same project, add todo to dom. maybe set a variable that changes depending if last clicked was a project or undefined
-//add completed projecct. when press on task complete, it goes there. when press on delete, it is just deleted? or add deleted project
+//add completed projecct. when press on task complete, it goes there. when press on delete, it is just deleted? or add deleted project - no don't add deleter project
         i++;
     }
 }

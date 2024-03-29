@@ -13,14 +13,12 @@ export let displayNewProject = function(newProject){
     }
     const projectOptions = document.getElementById("project");
     while (projectOptions.childNodes.length > 1){
-        console.log(projectOptions.lastChild.value)
-        console.log(projectOptions.childNodes.length)
         projectOptions.removeChild(projectOptions.lastChild)
     }
 
-    let task = document.createElement("div");
-        document.getElementById("tasks-container").appendChild(task);
-        task.classList.add("task");
+    // let task = document.createElement("div");
+    //     document.getElementById("tasks-container").appendChild(task);
+    //     task.classList.add("task");
 
     for (let project in projectList) {
         let newProjectType = document.createElement("div");

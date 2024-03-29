@@ -3,6 +3,8 @@ import { AddToObject } from "./addToDoToObject"
 import { showAllTasks } from "./all-tasks"
 import { project } from "./project-class"
 import { displayNewProject } from "./display-projects"
+import { displayTaskIfRelevant } from "./display-task"
+
 
 console.log("12345")
 export let objectOfToDoObjects = {};
@@ -16,6 +18,8 @@ const form = document.getElementById("form");
 const allTasks = document.getElementById("all-tasks");
 const createNewProjectButton = document.getElementById("create-new-project");
 let projectForm = document.getElementById("project-form");
+let tasksContainer = document.getElementById("tasks-container")
+
 
 newToDo.addEventListener("click", () => {
     dialog.showModal();
@@ -37,6 +41,7 @@ function createToDo() {
         // console.log(toDoList);
         AddToObject(newToDo, objectOfToDoObjects);
         console.log(objectOfToDoObjects);
+        displayTaskIfRelevant(newToDo, tasksContainer)
         document.querySelector("form").reset();
         // showAllTasks();
         dialog.close();
