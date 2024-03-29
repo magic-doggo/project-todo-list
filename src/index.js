@@ -4,6 +4,9 @@ import { showAllTasks } from "./all-tasks"
 import { project } from "./project-class"
 import { displayNewProject } from "./display-projects"
 import { displayTaskIfRelevant } from "./display-task"
+import './style.css';
+import { removeClass } from "./remove-class"
+
 
 
 console.log("12345")
@@ -64,6 +67,8 @@ newToDo.addEventListener("click", () => {
 })
 
 allTasks.addEventListener("click", () => {
+    removeClass()
+    allTasks.classList.add("selected")
     showAllTasks();
 })
 

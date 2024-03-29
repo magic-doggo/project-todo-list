@@ -1,0 +1,36 @@
+* {
+    border: 2px solid red;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 5px;
+    /* justify-content: space-around; */
+}
+
+.sidebar > p {
+    margin: 0px;
+}
+
+#projects {
+    height: 100px;
+}
+
+#all-tasks {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 12px;
+}
+
+.selected {
+    background-color: burlywood;
+}

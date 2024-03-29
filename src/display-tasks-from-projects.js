@@ -1,4 +1,5 @@
 import { objectOfToDoObjects } from ".";
+import { removeClass } from "./remove-class";
 // let projectNavItem = document.querySelectorAll(".project")
 
 export let addTasksToProject = function () {
@@ -8,6 +9,8 @@ export let addTasksToProject = function () {
     projectNavItem.forEach(projectItem => {
     projectItem.addEventListener("click", showTasksFromProject);
     function showTasksFromProject(asd){
+        removeClass();
+        projectItem.classList.add("selected");
         let i = 0;
         let element = document.getElementById("tasks-container"); //check if element name clashes
         while (element.firstChild) {
