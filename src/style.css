@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 2px solid red;
-}
+} */
 
 body {
     height: 100vh;
@@ -13,7 +13,17 @@ body {
     flex-direction: column;
     gap: 10px;
     padding: 10px 5px;
-    /* justify-content: space-around; */
+    background-color: #949398FF;
+    color: #F4DF4EFF;
+    font-weight: bolder;
+}
+
+.sidebar > button {
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 12px;
 }
 
 .sidebar > p {
@@ -24,13 +34,27 @@ body {
     height: 100px;
 }
 
-#all-tasks {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 12px 12px;
-}
-
 .selected {
     background-color: burlywood;
+}
+
+#main {
+    background-color: #F4DF4EFF;
+}
+
+#tasks-container {
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task {
+    display: grid;
+    border: 2px solid black;
+    box-shadow: 2px 4px 2px gray;
+}
+
+#dialog {
+    width: 50%;
 }

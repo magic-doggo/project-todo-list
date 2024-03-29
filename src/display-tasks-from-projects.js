@@ -26,23 +26,23 @@ export let addTasksToProject = function () {
                 
                 let title = document.createElement("div");
                 task.appendChild(title);
-                title.innerHTML = objectOfToDoObjects[i].title;
+                title.innerHTML = "Title: " + objectOfToDoObjects[i].title;
 
                 let description = document.createElement("div");
                 task.appendChild(description);
-                description.innerHTML = objectOfToDoObjects[i].description;
+                description.innerHTML = "Description: " + objectOfToDoObjects[i].description;
 
                 let dueDate = document.createElement("div");
                 task.appendChild(dueDate);
-                dueDate.innerHTML = objectOfToDoObjects[i].dueDate;
+                dueDate.innerHTML = "Due Date: " + objectOfToDoObjects[i].dueDate;
                 
                 let priority = document.createElement("div");
                 task.appendChild(priority);
-                priority.innerHTML = objectOfToDoObjects[i].priority;
+                priority.innerHTML = "Priority: " +  objectOfToDoObjects[i].priority;
 
                 let project = document.createElement("div");
                 task.appendChild(project);
-                project.innerHTML = objectOfToDoObjects[i].project;
+                project.innerHTML = "Project: " + objectOfToDoObjects[i].project;
             }
             i++;
         }

@@ -1,7 +1,6 @@
 import { projectList } from ".";
 import { project } from "./project-class";
 import { addTasksToProject } from "./display-tasks-from-projects";
-import { objectOfToDoObjects } from ".";
 let projectNavItem = document.querySelectorAll(".project")
 
 
@@ -21,7 +20,7 @@ export let displayNewProject = function(newProject){
     //     task.classList.add("task");
 
     for (let project in projectList) {
-        let newProjectType = document.createElement("div");
+        let newProjectType = document.createElement("li");
         projectContainer.appendChild(newProjectType);
         newProjectType.classList.add("project");
         newProjectType.innerHTML = newProject[i].projectName;
@@ -32,5 +31,6 @@ export let displayNewProject = function(newProject){
 
         i++;
     }
+
     addTasksToProject()
 }
