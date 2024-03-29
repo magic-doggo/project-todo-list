@@ -1,5 +1,9 @@
 import { projectList } from ".";
 import { project } from "./project-class";
+import { addTasksToProject } from "./display-tasks-from-projects";
+import { objectOfToDoObjects } from ".";
+let projectNavItem = document.querySelectorAll(".project")
+
 
 export let displayNewProject = function(newProject){
     let i = 0;
@@ -27,8 +31,8 @@ export let displayNewProject = function(newProject){
         let newProjectOption = document.createElement("option");
         projectOptions.appendChild(newProjectOption);
         newProjectOption.innerHTML = newProject[i].projectName;
-        
 
         i++;
     }
+    addTasksToProject()
 }
