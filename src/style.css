@@ -12,18 +12,29 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px 5px;
+    padding: 20px 10px;
     background-color: #949398FF;
     color: #F4DF4EFF;
     font-weight: bolder;
+    border: 1px solid black;
+    text-shadow: 1px 1px 1px black;
+    font-size: larger;
 }
 
-.sidebar > button {
+button {
     border-radius: 15px;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 12px 12px;
+    background-color: #F4DF4EFF;
+    box-shadow: 1px 1px 1px black;
+}
+
+form > button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 5px;
 }
 
 .sidebar > p {
@@ -47,14 +58,24 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin: 10px;
 }
 
 .task {
     display: grid;
     border: 2px solid black;
     box-shadow: 2px 4px 2px gray;
+    padding: 12px;
 }
 
 #dialog {
     width: 50%;
+    background-color: rgb(255, 249, 240);
+    text-shadow: none;
+}
+
+#form > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
