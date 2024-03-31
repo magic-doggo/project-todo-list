@@ -1,5 +1,9 @@
 export let displayTaskIfRelevant = function (newToDo, tasksContainer) {
-    if ( tasksContainer.firstChild == null || newToDo.project == tasksContainer.firstChild.lastChild.innerText) { //maybe also show if last child is unclassified
+    // console.log(newToDo.project)
+    // console.log("Project: " + tasksContainer.firstChild.lastChild.innerText)
+    // console.log(tasksContainer.firstChild)
+    let selectedButton = document.getElementsByClassName("selected")
+if (newToDo.project == selectedButton[0].innerHTML || selectedButton[0].innerHTML == "All To-Dos" || ("Project: " + newToDo.project) == (tasksContainer.firstChild.lastChild.innerText)) { //maybe also show if last child is unclassified
         let task = document.createElement("div");
         document.getElementById("tasks-container").appendChild(task);
         task.classList.add("task");
@@ -14,7 +18,7 @@ export let displayTaskIfRelevant = function (newToDo, tasksContainer) {
 
         let dueDate = document.createElement("div");
         task.appendChild(dueDate);
-        dueDate.innerHTML = "Due Date: " + newToDo.dueDate;
+        dueDate.innerHTML = "DueDate: " + newToDo.dueDate;
         
         let priority = document.createElement("div");
         task.appendChild(priority);

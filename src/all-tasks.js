@@ -17,24 +17,16 @@ export const showAllTasks = function() {
         document.getElementById("tasks-container").appendChild(task);
         task.classList.add("task");
         
-        // objectOfToDoObjects = {
-        //     0: {
-        //         title: "asd"
-        //     },
-        //     1: {
-        //         title: "qwe"
-        //     }
-        // }
         let title = document.createElement("div");
         task.appendChild(title);
         console.log(i);
         // title.innerHTML = "Title: " + objectOfToDoObjects[i].title;
-        title.innerHTML = Object.values(objectOfToDoObjects)[i].title
+        title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[i].title
         // title.innerHTML = objectOfToDoObjects[Object.keys(objectOfToDoObjects)[0].title]
 
         let description = document.createElement("div");
         task.appendChild(description);
-        description.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[i].description
+        description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[i].description
         // description.innerHTML = "Description: " + objectOfToDoObjects[i].description;
 
         let dueDate = document.createElement("div");
@@ -47,7 +39,7 @@ export const showAllTasks = function() {
         function deleteObject() {
             // console.log(objectOfToDoObjects)
             delete objectOfToDoObjects[toDo];
-            console.log(objectOfToDoObjects)
+            // console.log(objectOfToDoObjects)
             showAllTasks()
             // const {i, ...rest } = objectOfToDoObjects
             // console.log(rest);
