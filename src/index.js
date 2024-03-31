@@ -44,7 +44,7 @@ function createToDo() {
         // console.log(toDoList);
         AddToObject(newToDo, objectOfToDoObjects);
         console.log(objectOfToDoObjects);
-        displayTaskIfRelevant(newToDo, tasksContainer)
+        displayTaskIfRelevant(newToDo)
         document.querySelector("form").reset();
         // showAllTasks();
         dialog.close();

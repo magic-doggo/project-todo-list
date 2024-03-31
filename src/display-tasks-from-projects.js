@@ -1,5 +1,6 @@
 import { objectOfToDoObjects } from ".";
 import { removeClass } from "./remove-class";
+
 // let projectNavItem = document.querySelectorAll(".project")
 
 export let addTasksToProject = function () {
