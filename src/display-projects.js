@@ -15,14 +15,10 @@ export let displayNewProject = function(newProject){
         projectOptions.removeChild(projectOptions.lastChild)
     }
 
-    // let task = document.createElement("div");
-    //     document.getElementById("tasks-container").appendChild(task);
-    //     task.classList.add("task");
-
     for (let project in projectList) {
         let newProjectType = document.createElement("li");
         projectContainer.appendChild(newProjectType);
-        newProjectType.classList.add("project");
+        newProjectType.classList.add("projectName");
         newProjectType.innerHTML = newProject[i]._projectName;
 
         let newProjectOption = document.createElement("option");

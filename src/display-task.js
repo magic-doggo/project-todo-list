@@ -9,40 +9,43 @@ export let displayTaskIfRelevant = function (newToDo) {
         showAllTasks();
     }
     else if (newToDo.project == selectedButton[0].innerHTML){
+        console.log(newToDo.project + "newtodo")
         const element = document.getElementById("tasks-container");
         while (element.firstChild) {
             element.removeChild(element.firstChild);
         }      
         for (let toDo in objectOfToDoObjects) {
-            if (Object.values(objectOfToDoObjects)[toDo].project == selectedButton[0].innerHTML) {
+            console.log(toDo)
+            if ((objectOfToDoObjects)[toDo].project == selectedButton[0].innerHTML) {
             let task = document.createElement("div");
             document.getElementById("tasks-container").appendChild(task);
             task.classList.add("task");
+            console.log(toDo)
             
             let title = document.createElement("div");
             task.appendChild(title);
-            title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[toDo]._title
+            title.innerHTML = "Title: " + (objectOfToDoObjects)[toDo]._title
             title.classList.add("title")
     
             let description = document.createElement("div");
             task.appendChild(description);
-            description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[toDo]._description
+            description.innerHTML = "Description: " + (objectOfToDoObjects)[toDo]._description
             description.classList.add("description")
     
             let dueDate = document.createElement("div");
             task.appendChild(dueDate);
-            dueDate.innerHTML = "DueDate: " + Object.values(objectOfToDoObjects)[toDo]._dueDate
+            dueDate.innerHTML = "DueDate: " + (objectOfToDoObjects)[toDo]._dueDate
             dueDate.classList.add("due-date")
             
             let priority = document.createElement("div");
             task.appendChild(priority);
-            priority.innerHTML = "Priority: " + Object.values(objectOfToDoObjects)[toDo]._priority
+            priority.innerHTML = "Priority: " + (objectOfToDoObjects)[toDo]._priority
             priority.classList.add("priority")
     
     
             let project = document.createElement("div");
             task.appendChild(project);
-            project.innerHTML = "Project: " + Object.values(objectOfToDoObjects)[toDo]._project;
+            project.innerHTML = "Project: " + (objectOfToDoObjects)[toDo]._project;
             project.classList.add("project")
     
             let deleteMe = document.createElement("button");
@@ -56,8 +59,9 @@ export let displayTaskIfRelevant = function (newToDo) {
                 // delete objectOfToDoObjects[toDo];
                 objectOfToDoObjects.splice(toDo, 1);
                 window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
-                console.log(objectOfToDoObjects)
-                showAllTasks()
+                console.log(objectOfToDoObjects);
+                displayTaskIfRelevant(newToDo);
+                // showAllTasks()
             }
         }
         }    

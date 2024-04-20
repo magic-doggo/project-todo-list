@@ -1,10 +1,9 @@
 import { objectOfToDoObjects } from ".";
 import { removeClass } from "./remove-class";
-
-// let projectNavItem = document.querySelectorAll(".project")
+import { showAllTasks } from "./all-tasks";
 
 export let addTasksToProject = function () {
-    let projectNavItem = document.querySelectorAll(".project")
+    let projectNavItem = document.querySelectorAll(".projectName")
     let currentProject;
 
     projectNavItem.forEach(projectItem => {
@@ -26,24 +25,24 @@ export let addTasksToProject = function () {
                 
                 let title = document.createElement("div");
                 task.appendChild(title);
-                title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[i]._title
+                title.innerHTML = "Title: " + (objectOfToDoObjects)[i]._title
 
                 let description = document.createElement("div");
                 task.appendChild(description);
-                description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[i]._description
+                description.innerHTML = "Description: " + (objectOfToDoObjects)[i]._description
 
                 let dueDate = document.createElement("div");
                 task.appendChild(dueDate);
-                dueDate.innerHTML = "DueDate: " + Object.values(objectOfToDoObjects)[i]._dueDate
+                dueDate.innerHTML = "DueDate: " + (objectOfToDoObjects)[i]._dueDate
                 
                 let priority = document.createElement("div");
                 task.appendChild(priority);
-                priority.innerHTML = "Priority: " + Object.values(objectOfToDoObjects)[i]._priority
+                priority.innerHTML = "Priority: " + (objectOfToDoObjects)[i]._priority
 
 
                 let project = document.createElement("div");
                 task.appendChild(project);
-                project.innerHTML = "Project: " + Object.values(objectOfToDoObjects)[i]._project
+                project.innerHTML = "Project: " + (objectOfToDoObjects)[i]._project
 
                 let deleteMe = document.createElement("button");
                 task.appendChild(deleteMe)
@@ -53,10 +52,11 @@ export let addTasksToProject = function () {
                 deleteMe.addEventListener("click", deleteObject)
                 function deleteObject() {
                     // delete objectOfToDoObjects[toDo];
-                    objectOfToDoObjects.splice(todo, 1);
+                    objectOfToDoObjects.splice(object, 1);
                     window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
-
-                    showAllTasks()
+                    console.log(objectOfToDoObjects);
+                    // showAllTasks()
+                    showTasksFromProject();
                 }
             }
             i++;

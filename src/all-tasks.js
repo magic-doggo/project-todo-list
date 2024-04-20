@@ -17,7 +17,7 @@ export const showAllTasks = function() {
         
         let title = document.createElement("div");
         task.appendChild(title);
-        title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[i]._title
+        title.innerHTML = "Title: " + (objectOfToDoObjects)[i]._title
         title.classList.add("title")
 
         // task.addEventListener("click", toggleDescription)
@@ -48,23 +48,23 @@ export const showAllTasks = function() {
         // description.classList.add("description")
         let description = document.createElement("div");
         task.appendChild(description);
-        description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[i]._description
+        description.innerHTML = "Description: " + (objectOfToDoObjects)[i]._description
         description.classList.add("description")
 
         let dueDate = document.createElement("div");
         task.appendChild(dueDate);
-        dueDate.innerHTML = "DueDate: " + Object.values(objectOfToDoObjects)[i]._dueDate
+        dueDate.innerHTML = "DueDate: " + (objectOfToDoObjects)[i]._dueDate
         dueDate.classList.add("due-date")
 
         let priority = document.createElement("div");
         task.appendChild(priority);
-        priority.innerHTML = "Priority: " + Object.values(objectOfToDoObjects)[i]._priority
+        priority.innerHTML = "Priority: " + (objectOfToDoObjects)[i]._priority
         priority.classList.add("priority")
 
 
         let project = document.createElement("div");
         task.appendChild(project);
-        project.innerHTML = "Project: " + Object.values(objectOfToDoObjects)[i]._project;
+        project.innerHTML = "Project: " + (objectOfToDoObjects)[i]._project;
         project.classList.add("project")
 
         let deleteMe = document.createElement("button");
