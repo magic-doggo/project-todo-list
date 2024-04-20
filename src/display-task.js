@@ -21,32 +21,31 @@ export let displayTaskIfRelevant = function (newToDo) {
             
             let title = document.createElement("div");
             task.appendChild(title);
-            console.log(toDo);
-            title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[toDo].title
+            title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[toDo]._title
             title.classList.add("title")
     
             let description = document.createElement("div");
             task.appendChild(description);
-            description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[toDo].description
+            description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[toDo]._description
             description.classList.add("description")
     
             let dueDate = document.createElement("div");
             task.appendChild(dueDate);
-            dueDate.innerHTML = "DueDate: " + Object.values(objectOfToDoObjects)[toDo].dueDate
+            dueDate.innerHTML = "DueDate: " + Object.values(objectOfToDoObjects)[toDo]._dueDate
             dueDate.classList.add("due-date")
             
             let priority = document.createElement("div");
             task.appendChild(priority);
-            priority.innerHTML = "Priority: " + Object.values(objectOfToDoObjects)[toDo].priority
+            priority.innerHTML = "Priority: " + Object.values(objectOfToDoObjects)[toDo]._priority
             priority.classList.add("priority")
     
     
             let project = document.createElement("div");
             task.appendChild(project);
-            project.innerHTML = "Project: " + Object.values(objectOfToDoObjects)[toDo].project;
+            project.innerHTML = "Project: " + Object.values(objectOfToDoObjects)[toDo]._project;
             project.classList.add("project")
     
-            let deleteMe = document.createElement("div");
+            let deleteMe = document.createElement("button");
             task.appendChild(deleteMe)
             deleteMe.innerHTML = ("Delete me")
             deleteMe.classList.add("delete-me")

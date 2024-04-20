@@ -79,3 +79,8 @@ form > button {
     flex-direction: column;
     gap: 10px;
 }
+
+.delete-me {
+    background-color: #949398FF;
+    width: 15%;
+}

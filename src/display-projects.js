@@ -23,11 +23,11 @@ export let displayNewProject = function(newProject){
         let newProjectType = document.createElement("li");
         projectContainer.appendChild(newProjectType);
         newProjectType.classList.add("project");
-        newProjectType.innerHTML = newProject[i].projectName;
+        newProjectType.innerHTML = newProject[i]._projectName;
 
         let newProjectOption = document.createElement("option");
         projectOptions.appendChild(newProjectOption);
-        newProjectOption.innerHTML = newProject[i].projectName;
+        newProjectOption.innerHTML = newProject[i]._projectName;
 
         i++;
     }
