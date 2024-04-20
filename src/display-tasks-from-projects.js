@@ -52,7 +52,10 @@ export let addTasksToProject = function () {
         
                 deleteMe.addEventListener("click", deleteObject)
                 function deleteObject() {
-                    delete objectOfToDoObjects[toDo];
+                    // delete objectOfToDoObjects[toDo];
+                    objectOfToDoObjects.splice(todo, 1);
+                    window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
+
                     showAllTasks()
                 }
             }

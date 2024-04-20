@@ -19,6 +19,7 @@ export const showAllTasks = function() {
         task.appendChild(title);
         title.innerHTML = "Title: " + Object.values(objectOfToDoObjects)[i]._title
         title.classList.add("title")
+
         // task.addEventListener("click", toggleDescription)
         // function toggleDescription(){
         //     let description2 = document.createElement("div");
@@ -73,7 +74,11 @@ export const showAllTasks = function() {
 
         deleteMe.addEventListener("click", deleteObject)
         function deleteObject() {
-            delete objectOfToDoObjects[toDo];
+            console.log(objectOfToDoObjects)
+            // delete objectOfToDoObjects[toDo];
+            objectOfToDoObjects.splice(toDo, 1);
+            window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
+            console.log(objectOfToDoObjects)
             showAllTasks()
         }
         i++;

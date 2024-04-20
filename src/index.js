@@ -23,8 +23,6 @@ if (localStorage.getItem("storedProjectList") == null) {
 else {
     let newProjectList = window.localStorage.getItem("storedProjectList");
     projectList = JSON.parse(newProjectList);
-    console.log(projectList)
-    console.log(newProjectList)
 }
 export  {projectList}
 
@@ -56,10 +54,7 @@ function createToDo() {
     let newToDo = new toDo (title, description, dueDate, priority, project);
     if (form.checkValidity() === true){ //maybe make function to check validity, including checking whether a task with this title already exists?
         objectOfToDoObjects.push(newToDo)
-        // AddToObject(newToDo, objectOfToDoObjects);
         window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
-        console.log(objectOfToDoObjects)
-        console.log(typeof(objectOfToDoObjects))
         let newObject = window.localStorage.getItem("testKey");
         displayTaskIfRelevant(newToDo)
         document.querySelector("form").reset();
@@ -72,9 +67,6 @@ function createToDo() {
 function setRequiredToFalse(){
     document.getElementById("title").required = false;
 }
-
-// later can create other smaller arrays depending on project
-// how will i select which project it belongs to? do I Need another parameter in toDo? dropdown to select the project? create a general project, or allow todos not to have proj?
 
 newToDo.addEventListener("click", () => {
     dialog.showModal();

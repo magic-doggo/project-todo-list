@@ -52,7 +52,11 @@ export let displayTaskIfRelevant = function (newToDo) {
     
             deleteMe.addEventListener("click", deleteObject)
             function deleteObject() {
-                delete objectOfToDoObjects[toDo];
+                console.log(objectOfToDoObjects)
+                // delete objectOfToDoObjects[toDo];
+                objectOfToDoObjects.splice(toDo, 1);
+                window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
+                console.log(objectOfToDoObjects)
                 showAllTasks()
             }
         }
