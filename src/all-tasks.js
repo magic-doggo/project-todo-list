@@ -11,7 +11,7 @@ export const showAllTasks = function() {
     } //clear the todos before requesting full list
 
     for (let toDo in objectOfToDoObjects) {
-        var task = document.createElement("div"); //why did I make this a var??! check after branch is fixed
+        let task = document.createElement("div"); //why did I make this a var??! check after branch is fixed
         document.getElementById("tasks-container").appendChild(task);
         task.classList.add("task");
         
@@ -20,36 +20,24 @@ export const showAllTasks = function() {
         title.innerHTML = "Title: " + (objectOfToDoObjects)[i]._title
         title.classList.add("title")
 
-        // task.addEventListener("click", toggleDescription)
-        // function toggleDescription(){
-        //     let description2 = document.createElement("div");
-        //     console.log(task.childNodes.length)
-        //     // console.log(Object.values(objectOfToDoObjects)[0]._description);
-        //     // description.innerText = "Description: " + Object.values(objectOfToDoObjects)[0].description;
+        task.addEventListener("click", toggleDescription)
+        function toggleDescription(){
+            let description2 = document.createElement("div");
+            console.log(task.childNodes.length)
 
-        //     if (task.childNodes.length == 5){
-        //         // let description = document.createElement("div");
-        //         task.appendChild(description2);
-        //         // console.log(Object.values(objectOfToDoObjects)[0].description)
-        //         // description2.innerHtml = "Description: " + Object.values(objectOfToDoObjects)[0]._description;
-        //         description2.innerHtml = "Description: "
-        //         description2.classList.add("descriptionClass");
+            if (task.childNodes.length == 5){
+                task.appendChild(description2); 
+                console.log((objectOfToDoObjects)[toDo]._description)
+                description2.innerHTML = "Description: " + (objectOfToDoObjects)[toDo]._description;
+                description2.classList.add("descriptionClass");
+                console.log(task.childNodes.length)
 
-        //     }
-        //     else if (task.childNodes.length > 5) {
-        //             task.removeChild(description2)
-        //     }
-        // }
-
-        // let description = document.createElement("div");
-        // task.appendChild(description);
-        // description.innerHTML = "Description: " + Object.values(objectOfToDoObjects)[i].description
-        // // description.innerHTML = "Description: " + objectOfToDoObjects[i].description;
-        // description.classList.add("description")
-        let description = document.createElement("div");
-        task.appendChild(description);
-        description.innerHTML = "Description: " + (objectOfToDoObjects)[i]._description
-        description.classList.add("description")
+            }
+            else if (task.childNodes.length > 5) {
+                    task.removeChild(task.children[5])
+                    console.log(task.childNodes.length)
+            }
+        }
 
         let dueDate = document.createElement("div");
         task.appendChild(dueDate);
@@ -83,5 +71,5 @@ export const showAllTasks = function() {
         }
         i++;
     }
-    return task;
+    // return task;
 }

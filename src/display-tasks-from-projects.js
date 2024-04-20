@@ -27,9 +27,18 @@ export let addTasksToProject = function () {
                 task.appendChild(title);
                 title.innerHTML = "Title: " + (objectOfToDoObjects)[i]._title
 
-                let description = document.createElement("div");
-                task.appendChild(description);
-                description.innerHTML = "Description: " + (objectOfToDoObjects)[i]._description
+                task.addEventListener("click", toggleDescription)
+                function toggleDescription(){
+                    let description2 = document.createElement("div");        
+                    if (task.childNodes.length == 5){
+                        task.appendChild(description2); 
+                        description2.innerHTML = "Description: " + (objectOfToDoObjects)[object]._description;
+                        description2.classList.add("descriptionClass");
+                    }
+                    else if (task.childNodes.length > 5) {
+                            task.removeChild(task.children[5])
+                    }
+                }
 
                 let dueDate = document.createElement("div");
                 task.appendChild(dueDate);
@@ -51,11 +60,8 @@ export let addTasksToProject = function () {
         
                 deleteMe.addEventListener("click", deleteObject)
                 function deleteObject() {
-                    // delete objectOfToDoObjects[toDo];
                     objectOfToDoObjects.splice(object, 1);
                     window.localStorage.setItem("testKey", JSON.stringify(objectOfToDoObjects));
-                    console.log(objectOfToDoObjects);
-                    // showAllTasks()
                     showTasksFromProject();
                 }
             }
